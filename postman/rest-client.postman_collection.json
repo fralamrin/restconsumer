@@ -1,0 +1,175 @@
+{
+	"info": {
+		"_postman_id": "c51712d5-6781-42e2-8230-e13547ad1273",
+		"name": "rest-client",
+		"description": "This is a collection with different request which can be used to test code challenge requested by Rindus. ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "All posts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/posts",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get post by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/posts/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"posts",
+						"1"
+					]
+				},
+				"description": "Change endopoint to get required id:\n\n/posts/{id}"
+			},
+			"response": []
+		},
+		{
+			"name": "Replace post by id",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<post>\n    <userId>1</userId>\n    <title>This is a new title</title>\n    <body>This is a new body</body>\n</post>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/posts/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"posts",
+						"1"
+					]
+				},
+				"description": "Change endopoint to replace required id:\n\n/posts/{id}\n\nA reqest body is required:\n\n<post>\n    <userId>[This is a new user id]</userId>\n    <title>[This is a new title]</title>\n    <body>[This is a new body]</body>\n</post>"
+			},
+			"response": []
+		},
+		{
+			"name": "Create post",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<post>\n    <userId>1</userId>\n    <title>This is a new title</title>\n    <body>This is a new body</body>\n</post>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/posts",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"posts"
+					]
+				},
+				"description": "A reqest body is required:\n\n<post>\n    <userId>[This is a new user id]</userId>\n    <title>[This is a new title]</title>\n    <body>[This is a new body]</body>\n</post>"
+			},
+			"response": []
+		},
+		{
+			"name": "Patch post by id",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/xml"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<post>\n    <userId>1</userId>\n    <body>This is a new body</body>\n</post>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/posts/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"posts",
+						"1"
+					]
+				},
+				"description": "Change endopoint to patch required id:\n\n/posts/{id}\n\nA reqest body is required:\n\n<post>\n    <userId>[This is a new user id]</userId>\n    <title>[This is a new title]</title>\n    <body>[This is a new body]</body>\n</post>"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete post",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/posts/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"posts",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
