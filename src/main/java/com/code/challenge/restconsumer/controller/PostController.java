@@ -22,9 +22,9 @@ public class PostController {
 
     private final PostService postService;
 
-    private ObjectMapper objectMapper;
+    private final ObjectMapper objectMapper;
 
-    private XmlMapper xmlMapper;
+    private final XmlMapper xmlMapper;
 
     public PostController(PostService postService, ObjectMapper objectMapper, XmlMapper xmlMapper) {
         this.postService = postService;

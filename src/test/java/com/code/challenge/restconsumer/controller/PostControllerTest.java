@@ -14,9 +14,6 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-import java.util.Optional;
-
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -26,14 +23,12 @@ class PostControllerTest {
     @Mock
     private PostService postService;
 
-    private PostController postController;
-
     private MockMvc mockMvc;
 
     @BeforeEach
-    public void setUp() throws Exception {
+    public void setUp() {
         postService = Mockito.mock(PostService.class);
-        postController = new PostController(postService, new ObjectMapper(), new XmlMapper());
+        PostController postController = new PostController(postService, new ObjectMapper(), new XmlMapper());
         this.mockMvc = MockMvcBuilders.standaloneSetup(postController).build();
     }
 
